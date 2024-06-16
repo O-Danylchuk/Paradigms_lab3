@@ -18,15 +18,12 @@ char* takeInput() {
 int main() {
     
     cout << "Enter the word which needs to be encrypted" << endl;
-    char* input = takeInput();
-    char* text = input;
-    input = nullptr;
+    char* text = takeInput();
 
+    int key;
     cout << "Enter the key of encryption (int from 1 to 25)" << endl;
-    input = takeInput();
-    char* ckey = input;
-    input = nullptr;
-    int key = atoi(ckey);
+    cin >> key;
+
     char* encrypted = CaesarEncr(text, key);
     cout << encrypted << endl;
 
