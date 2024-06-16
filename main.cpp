@@ -77,5 +77,12 @@ int main() {
 
     char* decrypted = CaesarDecr_ptr(text, key);
     cout << decrypted << endl;
+
+
+    #if defined(_WIN32) || defined(_WIN64)
+        FreeLibrary(handle);
+    #else
+        dlclose(handle);
+    #endif
     return 0;
 }
